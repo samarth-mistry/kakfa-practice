@@ -3,7 +3,7 @@ The complete implementation of data-pipeline using Kafka
 
 **Software used**, MySQl, Kafka, Python
 
-Step 1: install and up the Kafka & create topic name tolls
+## Step 1: install and up the Kafka & create topic name tolls
 
 ```
 wget https://archive.apache.org/dist/kafka/2.8.0/kafka_2.12-2.8.0.tgz
@@ -14,7 +14,7 @@ bin/kafka-server-start.sh config/server.properties
 bin/kafka-topics.sh --create --topic news --bootstrap-server localhost:9092
 ```
 
-Step 2: Install and up MySQL && create table livetolldata
+## Step 2: Install and up MySQL && create table livetolldata
 
 ```
 mysql --host=127.0.0.1 --port=3306 --user=root --password=Mjk0NDQtcnNhbm5h
@@ -23,7 +23,7 @@ use tolldata;
 create table livetolldata(timestamp datetime,vehicle_id int,vehicle_type char(15),toll_plaza_id smallint);
 exit
 ```
-Step 3: Setup Python for MySQl and kafka
+## Step 3: Setup Python for MySQl and kafka
 
 ```
 python3 -m pip install kafka-python
@@ -31,7 +31,7 @@ python3 -m pip install mysql-connector-python
 python3 scripts/producer.py
 python3 scripts/consumer.py
 ```
-#System Resource status
+## System Resource status
 -Terminals:
   -Zookeeper
   -Kafka-topic
